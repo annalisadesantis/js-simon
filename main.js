@@ -24,11 +24,15 @@ $(document).ready(function() {
 
     document.getElementById('box').innerHTML = numeri_lista;
 
-    var tempo = 30000;
+    var tempo = 3000;
 
     setTimeout(function() {
-        $("span").addClass("active")
+        $("span").addClass("active");
     }, tempo);
+
+
+
+
 
 
 
