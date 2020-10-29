@@ -11,6 +11,8 @@ $(document).ready(function() {
     var tot_num = 5;
     var min_num = 1;
     var max_num = 100;
+    var lista_utente = [];
+    var numeri_utente;
 
     // Il computer deve generare 5 numeri casuali tra 1 e 5.
     while (numeri_lista.length < tot_num){
@@ -22,16 +24,38 @@ $(document).ready(function() {
         }
     }
 
-    document.getElementById('box').innerHTML = numeri_lista;
+    // var stringaDaStampare = '';
+    //
+    // for(var i = 0; i < numeri_lista.length; i++) {
+    //
+    //     stringaDaStampare = stringaDaStampare + " - " + numeri_lista[i];
+    // }
+
+    $('#box1').text(numeri_lista);
 
     var tempo = 3000;
 
     setTimeout(function() {
+
         $("span").addClass("active");
+
+        setTimeout(function() {
+
+            while(lista_utente.length < tot_num){
+                numeri_utente = parseInt(prompt("Inserisci i numeri che ricordi. Uno alla volta!"));
+
+                if (lista_utente.includes(numeri_utente) == false && !isNaN(numeri_utente)){
+                    lista_utente.push(numeri_utente);
+                }else{
+                    alert("Hai già inserito questo numero");
+                }
+
+                $('#box2').text(lista_utente);
+            }
+
+        }, 1000);
+
     }, tempo);
-
-
-
 
 
 
