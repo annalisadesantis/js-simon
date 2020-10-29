@@ -14,6 +14,8 @@ $(document).ready(function() {
     var lista_utente = [];
     var numeri_utente;
 
+    var match_numeri = [];
+
     // Il computer deve generare 5 numeri casuali tra 1 e 5.
     while (numeri_lista.length < tot_num){
         var numeri_random = Math.floor(Math.random() * max_num) + 1;
@@ -46,6 +48,7 @@ $(document).ready(function() {
 
                 if (lista_utente.includes(numeri_utente) == false && !isNaN(numeri_utente)){
                     lista_utente.push(numeri_utente);
+
                 }else{
                     alert("Hai già inserito questo numero");
                 }
@@ -53,9 +56,25 @@ $(document).ready(function() {
                 $('#box2').text(lista_utente);
             }
 
+            setTimeout(function() {
+
+                for (var i = 0; i < lista_utente.length; i++) {
+                    if(numeri_lista.includes(lista_utente[i]){
+                        match_numeri.push(numeri_utente[i]);
+                    }
+                }
+
+                $('#box3').text(match_numeri);
+
+            }, 2000);
+
         }, 1000);
 
     }, tempo);
+
+
+
+
 
 
 
