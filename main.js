@@ -24,6 +24,12 @@ $(document).ready(function() {
 
     document.getElementById('box').innerHTML = numeri_lista;
 
+    var tempo = 30000;
+
+    setTimeout(function() {
+        $("span").addClass("active")
+    }, tempo);
+
 
 
 });

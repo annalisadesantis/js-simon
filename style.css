@@ -29,3 +29,7 @@ h1{
     font-size: 40px;
     color: #9932cc;
 }
+
+span.active{
+    display: none;
+}
