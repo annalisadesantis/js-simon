@@ -26,13 +26,6 @@ $(document).ready(function() {
         }
     }
 
-    // var stringaDaStampare = '';
-    //
-    // for(var i = 0; i < numeri_lista.length; i++) {
-    //
-    //     stringaDaStampare = stringaDaStampare + " - " + numeri_lista[i];
-    // }
-
     $('#box1').text(numeri_lista);
 
     var tempo = 3000;
@@ -50,7 +43,7 @@ $(document).ready(function() {
                     lista_utente.push(numeri_utente);
 
                 }else{
-                    alert("Hai già inserito questo numero");
+                    alert("Hai già inserito questo numero!");
                 }
 
                 $('#box2').text(lista_utente);
@@ -61,13 +54,14 @@ $(document).ready(function() {
                 for (var i = 0; i < lista_utente.length; i++) {
 
                     if(numeri_lista.includes(lista_utente[i])){
-                        match_numeri.push(numeri_utente[i]);
+                        match_numeri.push(lista_utente[i]);
                     }
                 }
 
                 $('#box3').text(match_numeri);
+                $('#final').text("Hai totalizzato " + match_numeri.length + " punti!");
 
-            }, 2000);
+            }, 1000);
 
         }, 1000);
 

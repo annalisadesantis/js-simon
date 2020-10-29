@@ -33,3 +33,7 @@ h1{
 span.active{
     display: none;
 }
+
+#final {
+    color: #9932cc;
+}
