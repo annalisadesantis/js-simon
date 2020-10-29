@@ -59,7 +59,8 @@ $(document).ready(function() {
             setTimeout(function() {
 
                 for (var i = 0; i < lista_utente.length; i++) {
-                    if(numeri_lista.includes(lista_utente[i]){
+
+                    if(numeri_lista.includes(lista_utente[i])){
                         match_numeri.push(numeri_utente[i]);
                     }
                 }
@@ -71,12 +72,5 @@ $(document).ready(function() {
         }, 1000);
 
     }, tempo);
-
-
-
-
-
-
-
 
 });
