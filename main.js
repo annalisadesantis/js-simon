@@ -13,7 +13,6 @@ $(document).ready(function() {
     var max_num = 100;
     var lista_utente = [];
     var numeri_utente;
-
     var match_numeri = [];
 
     // Il computer deve generare 5 numeri casuali tra 1 e 5.
@@ -26,16 +25,19 @@ $(document).ready(function() {
         }
     }
 
+    // Stampo i numeri random in pagina
     $('#box1').text(numeri_lista);
 
-    var tempo = 3000;
+    var tempo = 30000;
 
     setTimeout(function() {
 
+        // Rimuovo il block alla fine dei 30 secondi
         $("span").addClass("active");
 
         setTimeout(function() {
 
+            // verifico che i numeri utente non siamo doppi e li metto in un array vuoto
             while(lista_utente.length < tot_num){
                 numeri_utente = parseInt(prompt("Inserisci i numeri che ricordi. Uno alla volta!"));
 
@@ -46,11 +48,13 @@ $(document).ready(function() {
                     alert("Hai già inserito questo numero!");
                 }
 
+                // stampo i numeri utente in pagina
                 $('#box2').text(lista_utente);
             }
 
             setTimeout(function() {
 
+                // verifico se i numeri utente coincidono con quelli random
                 for (var i = 0; i < lista_utente.length; i++) {
 
                     if(numeri_lista.includes(lista_utente[i])){
@@ -58,13 +62,37 @@ $(document).ready(function() {
                     }
                 }
 
+                // stampo i numeri che coincidono
                 $('#box3').text(match_numeri);
+                // stampo il punteggio finale
                 $('#final').text("Hai totalizzato " + match_numeri.length + " punti!");
+                // Rimetto display block ai numeri random per permettere all'utente di confrontarli con quelli inseriti da lui
+                $("span").removeClass("active");
 
             }, 1000);
 
         }, 1000);
 
     }, tempo);
+
+    // Creo una varibile time per simulare il countdown
+    var time = 30;
+    // imposto un interval che ripete ogni 1000 millisecondi
+    var clock = setInterval(stampaCountDown, 1000);
+
+    // imposto un timeout che allo scadere dei 3 secondi blocca l'interval
+    setTimeout(stoppaCountDown, time * 1000);
+
+    // stampo in pagina i numeri in senso decrescente
+    function stampaCountDown() {
+        $('h2').text("Il tempo scorre: " + time);
+        time--;
+    }
+
+    // stampo in pagina la fine del countdown
+    function stoppaCountDown() {
+        clearInterval(clock);
+        $('h2').text("Tempo scaduto!");
+    }
 
 });

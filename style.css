@@ -12,6 +12,11 @@ body{
     align-items: center;
 }
 
+h2 {
+    color: #9932cc;
+    margin-top: 10px;
+}
+
 h1{
     color: pink;
     font-size: 40px;
