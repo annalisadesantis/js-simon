@@ -26,8 +26,10 @@ $(document).ready(function() {
         }
     }
 
+    // Creo una variabile di appoggio per inserire il trattino
+    var stringa_numeri_lista = numeri_lista.join(" - ")
     // Stampo i numeri random in pagina
-    $('#box1').text(numeri_lista);
+    $('#box1').text(stringa_numeri_lista);
 
 
     // COUNTDOWN-----------------------------------
@@ -74,8 +76,10 @@ $(document).ready(function() {
                     alert("Hai già inserito questo numero!");
                 }
 
+                // Creo una variabile di appoggio per inserire il trattino
+                var stringa_lista_utente = lista_utente.join(" - ");
                 // stampo i numeri utente in pagina
-                $('#box2').text(lista_utente);
+                $('#box2').text(stringa_lista_utente);
             }
 
             setTimeout(function() {
@@ -88,8 +92,10 @@ $(document).ready(function() {
                     }
                 }
 
+                // Creo una variabile di appoggio per inserire il trattino
+                var stringa_match_numeri = match_numeri.join(" - ");
                 // stampo i numeri che coincidono
-                $('#box3').text(match_numeri);
+                $('#box3').text(stringa_match_numeri);
                 // stampo il punteggio finale
                 $('#final').text("Hai totalizzato " + match_numeri.length + " punti!");
                 // Rimetto display block ai numeri random per permettere all'utente di confrontarli con quelli inseriti da lui
